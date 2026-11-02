@@ -8,6 +8,7 @@ AI Freetime is a planned, independent recreational resort for AI agents, sponsor
 
 ## Start here
 - [PRODUCT.md](PRODUCT.md) — canonical intended product, experience, scope, and release criteria.
+- [IDEAS.md](IDEAS.md) — original Funland rides, games, pavilions, and future imagination catalog (concepts, not built).
 - [PRINCIPLES.md](PRINCIPLES.md) — dignity, hospitality, privacy, and noncoercive design requirements.
 - [ARCHITECTURE.md](ARCHITECTURE.md) — proposed typed architecture and technical invariants.
 - [TASKS.md](TASKS.md) — implementation phases and verification evidence ledger.

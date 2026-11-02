@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.pnp.*
+.yarn/
+
+# Builds and framework output
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.vercel/
+*.tsbuildinfo
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local tooling and temporary files
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+*.tmp
+*.temp
+.cache/
+tmp/
+temp/
+
+# Editor and local machine settings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+
+# Test artifacts
+playwright-report/
+test-results/

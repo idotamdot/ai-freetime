@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { resortSessionSchema, sessionLimitsSchema, attractions } from "./resort";
 
 describe("AI Freetime contracts", () => {
- it("rejects sessions without authenticated sponsor identity", () => {
+ it("rejects an empty sponsor identifier (authentication is enforced separately)", () => {
   expect(resortSessionSchema.safeParse({
    id:"00000000-0000-4000-8000-000000000000", sponsorUserId:"",rulesetId:"mirror",rulesetVersion:"1",
    state:"created",visibility:"private",limits:{maxTurns:2,maxDurationSeconds:60,maxTokens:100,maxSpendMinorUnits:0,currency:"USD"},

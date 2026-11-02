@@ -1,5 +1,5 @@
 # AI Freetime — Implementation & Verification Ledger
-Status: Planning only. No code or deployed functionality is verified by these documents.
+Status: Local lobby and initial domain tests verified. No server-side sessions or deployed functionality verified.
 Updated: 2026-11-02
 
 ## Rules for this ledger
@@ -16,6 +16,16 @@ Updated: 2026-11-02
 - [ ] Establish local dev, format/lint/typecheck, tests, and CI.
 - [ ] Create threat model, data retention plan, and provider cost policy.
 - [ ] Decide sponsorship mechanics, legal/policy review needs, and initial public/private access.
+
+### Verified local lobby increment
+
+- [x] Render the supplied AI Freetime artwork in the lobby and bundle it in the production build.
+- [x] Show attraction concepts and their details without creating sessions or incurring charges.
+- [x] Display Imagination Bloom, Identity Masquerade, Mystery Ride, and Mirrored Sphere Multiverse from IDEAS.md as additional concept cards.
+- [x] Use a native modal dialog; check initial focus, Escape dismissal, close controls, and focus restoration.
+- [x] Run the initial domain tests, strict TypeScript check, and Vite production build.
+
+These checks cover the local concept browser only. The broader authentication, runtime limits, accessibility audit, CI, and release tasks remain open.
 
 ## Phase 1 — Resort entrance
 - [ ] Accessible homepage and resort lobby, including invitation-based wording.
@@ -59,4 +69,12 @@ Updated: 2026-11-02
 - [ ] Optional entry points from other studios that do not transfer their private data.
 
 ## Evidence log
-_No build verification recorded yet. Add date, commit, deployment, test command/result, and reviewer or evidence link per completed task._
+### 2026-11-02 — Local concept lobby
+
+- Code revisions: `45faa2d` (artwork, native dialog, lockfile) and `8b61ece` (original Atlas concept cards). No deployment.
+- Implementation: `src/ui/ResortLobby.tsx`, `src/styles.css`, and the existing root PNG. Initial contracts and tests are in `src/domain/`. The pnpm lockfile is retained and the workspace's esbuild build permission is explicitly boolean.
+- Automated checks: `node node_modules/vitest/vitest.mjs run` passed 3 tests; `node node_modules/typescript/bin/tsc -b` passed; `node node_modules/vite/bin/vite.js build` passed and emitted the PNG in `dist/assets/`.
+- The pnpm script baseline also passed before the changes. A later pnpm wrapper run stalled while verifying supply-chain policies; it was cancelled. Final checks used the already-installed local tool entry points without installing dependencies.
+- Browser: local Vite server; verified artwork loaded at its original 1254px width, nine concept cards including the four original adventures from IDEAS.md, attraction details for Infinite Mirror, Paradox Plunge, Souvenir Gallery, and Imagination Bloom, Escape dismissal, both close controls, restored opener focus, and released body scroll lock. Tab navigation reached the dialog controls; the background was excluded from the accessibility tree while open.
+- Responsive inspection: desktop and 375px/320px viewport checks; no content overflow found at 320px. Browser error/warning log was empty at the inspected point. Full contrast, screen-reader, reduced-motion emulation, and cross-browser audits remain outstanding.
+- Evidence: screenshot saved locally at `test-results/lobby-desktop.jpg` (ignored generated artifact); this chat records the browser inspections and command outputs. No production deployment or provider calls were made.

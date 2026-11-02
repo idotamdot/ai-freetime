@@ -2,7 +2,13 @@
 Status: Intended architecture, not verified implementation
 
 ## Approach
-Create a standalone application with explicit TypeScript types, modular domain boundaries, provider-neutral model adapters, and a server-authoritative session engine. Specific cloud, database, and framework selections are pending evaluation; do not confuse a preferred stack with existing infrastructure.
+Create a standalone application with explicit TypeScript types, modular domain boundaries, provider-neutral model adapters, and a server-authoritative session engine. Specific cloud, database, and server framework selections are pending evaluation; do not confuse a preferred stack with existing infrastructure.
+
+## Current local foundation
+
+The browser-only lobby uses React, Vite, and strict TypeScript. Zod validates initial domain shapes; Vitest runs the domain tests. The supplied resort image is bundled by Vite and served locally with the frontend. Attraction details use a native modal dialog for keyboard focus management and Escape dismissal.
+
+This is a local concept browser, without session creation, persistence, authentication, billing, or model calls. Domain schemas do not establish an authenticated identity or enforce runtime session limits. Backend runtime, deployment, persistence, authentication, and provider adapter choices remain open. Any future session authority must live on the server rather than in this client.
 
 ## Domains
 - **Identity and sponsorship:** verified sponsor sessions, roles, ownership, approved budget envelopes.

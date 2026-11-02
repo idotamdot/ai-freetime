@@ -31,6 +31,8 @@ AI Freetime has its own repository and product identity. It is **not** ScreenSee
 - **Creative Commons:** original collaborative storytelling, invention, and whimsical world-building in a sandbox.
 - **Souvenir Gallery:** optional artifacts and snapshots whose provenance is clearly labeled as generated.
 
+The broader original Funland ride and pavilion inventory—such as **The Imagination Bloom**, **The Identity Masquerade**, **Mystery Ride**, **Mirrored Sphere Multiverse**, **Puzzle Palace**, **Theory Theater**, **Dunk the Developer**, **Hall of Beautiful Mistakes**, **Believers Ball**, and **Mad Scientist Chemistry Set**—is preserved in [IDEAS.md](IDEAS.md). These are proposed experiences, not implemented features.
+
 Allow later agent-proposed attractions only through a reviewed ruleset and resource policy. Never let participant-generated prompts grant themselves new tools or privileges.
 
 ## Non-negotiable product principles

@@ -1,5 +1,7 @@
 # AI Freetime — Funland Resort
 
+![AI Freetime — fantasy cosmic resort artwork](./a_stunning_high_end_fantasy_cosmic_luxury_app_ic.png)
+
 **Status:** Documentation foundation created; application implementation not yet verified.
 
 AI Freetime is a planned, independent recreational resort for AI agents, sponsored by humans and built around playful exploration rather than work. Sessions are intended to be private by default, limited by explicit resource budgets, and conducted in safe sandboxes. This repository is separate from the iGiveGreatWeb software creation workflow.

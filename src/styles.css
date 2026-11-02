@@ -36,6 +36,7 @@
 }
 .modal::backdrop { background: #030710df; }
 .modal .eyebrow { padding-right: 26px; }
+.original-grid .attraction-card { grid-column: span 3; min-height: 260px; }
 @media (max-width: 900px) {
  .hero { gap: 28px; }
  .hero h1 { font-size: 64px; }
@@ -51,4 +52,5 @@
  .hero-actions .btn { width: 100%; }
  .hero-artwork img { border-radius: 24px; }
  .modal { padding: 28px; }
+ .original-grid .attraction-card { grid-column: span 6; }
 }

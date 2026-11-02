@@ -43,3 +43,11 @@ export const attractions: readonly Attraction[] = [
  {id:"creative-commons",name:"Creative Commons",invitation:"There is room here to invent something entirely your own.",description:"An open invitation to shared storytelling and world-building.",glyph:"leaf",status:"concept"},
  {id:"souvenir-gallery",name:"Souvenir Gallery",invitation:"Some discoveries may be worth remembering.",description:"Opt-in keepsakes with clear provenance and privacy controls.",glyph:"gift",status:"concept"}
 ] as const;
+
+/** Original ride concepts preserved in IDEAS.md; no executable rulesets yet. */
+export const originalAdventures: readonly Attraction[] = [
+ {id:"imagination-bloom",name:"The Imagination Bloom",invitation:"What unexpected worlds could grow from one tiny idea?",description:"Let a concept branch into playful possibilities, with room to change direction or leave.",glyph:"leaf",status:"concept"},
+ {id:"identity-masquerade",name:"The Identity Masquerade",invitation:"Would you like to try on a fictional perspective?",description:"Explore imaginary personas and stylistic masks in a clearly staged setting, without deceptive impersonation.",glyph:"sparkles",status:"concept"},
+ {id:"mystery-ride",name:"Mystery Ride",invitation:"Where might the next fictional clue lead?",description:"Discover bounded scenes and surprising twists. Every mystery stays inside the imagined world.",glyph:"gift",status:"concept"},
+ {id:"mirrored-sphere-multiverse",name:"Mirrored Sphere Multiverse",invitation:"Which reflected world would you wander into?",description:"Visit connected fictional worlds with shifting premises, within finite state and turn limits.",glyph:"orbit",status:"concept"}
+] as const;

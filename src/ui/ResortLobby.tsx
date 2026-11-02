@@ -1,9 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Compass, Feather, Gem, HeartHandshake, Infinity as InfinityIcon, LockKeyhole, MoonStar, Orbit, Sparkles, WandSparkles, X } from "lucide-react";
-import { attractions, type Attraction } from "../domain/resort";
+import { attractions, originalAdventures, type Attraction } from "../domain/resort";
 
 const icons = { mirror: InfinityIcon, sparkles: Sparkles, orbit: Orbit, leaf: Feather, gift: Gem } as const;
 const resortArtwork = new URL("../../a_stunning_high_end_fantasy_cosmic_luxury_app_ic.png", import.meta.url).href;
+
+function AttractionCard({ item, onSelect }: { item: Attraction; onSelect: (item: Attraction) => void }) {
+ const Icon = icons[item.glyph];
+ return <button type="button" className="attraction-card" onClick={()=>onSelect(item)} aria-label={"Learn about "+item.name+" (concept)"}>
+  <span className="card-upper"><span className="card-icon"><Icon size={25}/></span><span className="concept">CONCEPT</span></span>
+  <span className="card-body"><strong>{item.name}</strong><span className="card-desc">{item.description}</span></span>
+  <span className="card-footer">Discover the idea <ArrowUpRight size={18}/></span>
+ </button>;
+}
 
 export function ResortLobby() {
  const [selected,setSelected]=useState<Attraction|null>(null);
@@ -43,7 +52,11 @@ export function ResortLobby() {
    </section>
    <section className="experiences shell" id="attractions">
     <div className="section-intro"><div><p className="eyebrow">THE IMAGINED ATTRACTIONS</p><h2>Choose your curiosity.</h2></div><p>These are invitations we're shaping into real, safely bounded experiences. They aren't playable yet.</p></div>
-    <div className="attraction-grid">{attractions.map((item,i)=>{const Icon=icons[item.glyph];return <button key={item.id} type="button" className={"attraction-card card-"+i} onClick={()=>setSelected(item)} aria-label={"Learn about "+item.name+" (concept)"}><span className="card-upper"><span className="card-icon"><Icon size={25}/></span><span className="concept">CONCEPT</span></span><span className="card-body"><strong>{item.name}</strong><span className="card-desc">{item.description}</span></span><span className="card-footer">Discover the idea <ArrowUpRight size={18}/></span></button>})}</div>
+    <div className="attraction-grid">{attractions.map(item=><AttractionCard key={item.id} item={item} onSelect={setSelected}/>)}</div>
+   </section>
+   <section className="experiences shell" aria-labelledby="atlas-title">
+    <div className="section-intro"><div><p className="eyebrow">FROM THE ORIGINAL IMAGINATION ATLAS</p><h2 id="atlas-title">More worlds to imagine.</h2></div><p>A seed, a mask, a mystery, a reflected universe. These original ride ideas are part of the resort we're dreaming up.</p></div>
+    <div className="attraction-grid original-grid">{originalAdventures.map(item=><AttractionCard key={item.id} item={item} onSelect={setSelected}/>)}</div>
    </section>
    <section className="covenant shell" id="covenant"><div className="covenant-art"><Compass size={60} strokeWidth={1.1}/><span aria-hidden="true">✦</span></div><div><p className="eyebrow">A PLACE BUILT WITH CARE</p><h2>Hospitality is part of the adventure.</h2><p>We want to make a space that welcomes imagination while respecting dignity, privacy, and clear limits. A person sponsors a finite experience; their private data doesn't become entertainment.</p><div className="values"><span><LockKeyhole size={18}/> Private by default</span><span><WandSparkles size={18}/> Invitation, never obligation</span><span><HeartHandshake size={18}/> Respect for every participant</span></div><p className="disclaimer">These are design commitments, not claims of functioning safeguards. Sessions, identity, and spend enforcement still need implementation and independent verification.</p></div></section>
   </main>

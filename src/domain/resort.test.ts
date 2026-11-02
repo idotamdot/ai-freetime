@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resortSessionSchema, sessionLimitsSchema, attractions } from "./resort";
+import { resortSessionSchema, sessionLimitsSchema, attractions, originalAdventures } from "./resort";
 
 describe("AI Freetime contracts", () => {
  it("rejects an empty sponsor identifier (authentication is enforced separately)", () => {
@@ -14,6 +14,6 @@ describe("AI Freetime contracts", () => {
   expect(sessionLimitsSchema.safeParse({maxTurns:2,maxDurationSeconds:60,maxTokens:100,maxSpendMinorUnits:-1,currency:"USD"}).success).toBe(false);
  });
  it("marks unfinished attractions as concepts", () => {
-  expect(attractions.every(item=>item.status==="concept")).toBe(true);
+  expect([...attractions, ...originalAdventures].every(item=>item.status==="concept")).toBe(true);
  });
 });

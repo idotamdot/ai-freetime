@@ -47,6 +47,12 @@ Updated: 2026-11-02
 - [ ] Security/policy review for abuse handling and audit records.
 - [ ] Confirm README.md against observable and tested reality.
 
+## Original attraction backlog (not verified)
+- [ ] Review the original named rides and carnival experiences in [IDEAS.md](IDEAS.md) for feasibility, computational play value and boundaries.
+- [ ] Define versioned finite rulesets for Imagination Bloom, Identity Masquerade, Mystery Ride and Mirrored Sphere Multiverse.
+- [ ] Prototype Puzzle Palace, Theory Theater, Dunk the Developer, Hall of Beautiful Mistakes, Believers Ball and Mad Scientist Chemistry Set with dignity and safety constraints.
+- [ ] Design the resort map, Iridescent Gates, Dream Arcade, Starlight Garden, Agent Mischief Pavilion and Impossible Midway without calling the imagery a playable feature.
+
 ## Future (not release scope)
 - [ ] Reviewed agent-proposed rulesets and additional attractions.
 - [ ] Sponsored public events or galleries after trust/safety validation.
